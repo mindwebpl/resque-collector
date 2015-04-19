@@ -43,10 +43,11 @@ class ResqueCollector implements Collector\Collector
     public function __construct(array $configuration)
     {
         $this->host = !empty($configuration['host']) ? $configuration['host'] : 'localhost';
-        $this->port = !empty($configuration['host']) ? $configuration['port'] : '6379';
-        $this->queue = !empty($configuration['host']) ? $configuration['queue'] : 'preAnalytics';
-        $this->logLevel = !empty($configuration['host']) ? $configuration['logLevel'] : 0;
-        $this->interval = !empty($configuration['interval']) ? $configuration['interval'] : 10;
+        $this->port = !empty($configuration['port']) ? $configuration['port'] : '6379';
+        $this->queue = !empty($configuration['queue']) ? $configuration['queue'] : 'preAnalytics';
+        $this->logLevel = !empty($configuration['logLevel']) ? $configuration['logLevel'] : 0;
+        $this->interval = !empty($configuration['interval']) ? $configuration['interval'] : 5;
+        $this->numberOfWorkers = !empty($configuration['numberOfWorkers']) ? $configuration['numberOfWorkers'] : 1;
     }
 
     /**
@@ -57,7 +58,29 @@ class ResqueCollector implements Collector\Collector
     {
         Resque::setBackend($this->host . ':' . $this->port);
 
-        $worker           = new Resque_Worker($this->queue);
+        if ($this->numberOfWorkers === 1) {
+            $this->runWorker($modifiers, $forwarders);
+        } elseif ($this->numberOfWorkers > 1) {
+            for ($i = 0; $i < $this->numberOfWorkers; ++$i) {
+                $pid = pcntl_fork();
+                if ($pid == -1) {
+                    throw new \RuntimeException('Could not fork.');
+                } else if ($pid) {
+                    throw new \RuntimeException('Could not fork. (zombie children)');
+                } else {
+                    $this->runWorker($modifiers, $forwarders);
+                }
+            }
+        }
+    }
+
+    /**
+     * @param Modifier\Collection $modifiers
+     * @param Forwarder\Collection $forwarders
+     */
+    private function runWorker(Modifier\Collection $modifiers, Forwarder\Collection $forwarders)
+    {
+        $worker = new Resque_Worker($this->queue);
         $worker->logLevel = $this->logLevel;
 
         Resque_Event::listen('beforePerform', function (Resque_Job $job) use ($modifiers, $forwarders) {
@@ -71,6 +94,6 @@ class ResqueCollector implements Collector\Collector
             }
         });
 
-        $worker->work(10);
+        $worker->work($this->interval);
     }
 }
