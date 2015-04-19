@@ -1,0 +1,224 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "5c8b9b96f00cf45b8cd8e1809e8a554c",
+    "packages": [
+        {
+            "name": "chrisboulton/php-resque",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chrisboulton/php-resque.git",
+                "reference": "0549d6c88a4aed934655b7c03b6153349d6c3ad0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chrisboulton/php-resque/zipball/0549d6c88a4aed934655b7c03b6153349d6c3ad0",
+                "reference": "0549d6c88a4aed934655b7c03b6153349d6c3ad0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Resque": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Boulton",
+                    "email": "chris@bigcommerce.com"
+                }
+            ],
+            "description": "Redis backed library for creating background jobs and processing them later. Based on resque for Ruby.",
+            "homepage": "http://www.github.com/chrisboulton/php-resque/",
+            "keywords": [
+                "background",
+                "job",
+                "redis",
+                "resque"
+            ],
+            "time": "2012-10-13 07:28:16"
+        },
+        {
+            "name": "mindweb/collector",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindwebpl/collector.git",
+                "reference": "7cacfa4efe9cb776ec5ccf8cc120f278520603bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindwebpl/collector/zipball/7cacfa4efe9cb776ec5ccf8cc120f278520603bf",
+                "reference": "7cacfa4efe9cb776ec5ccf8cc120f278520603bf",
+                "shasum": ""
+            },
+            "require": {
+                "mindweb/forwarder": "dev-master",
+                "mindweb/modifier": "dev-master",
+                "symfony/console": "~2.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mindweb\\Collector\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Czołnowski",
+                    "email": "marcin@czolnowski.net"
+                }
+            ],
+            "time": "2015-04-19 16:27:52"
+        },
+        {
+            "name": "mindweb/forwarder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindwebpl/forwarder.git",
+                "reference": "328208ae35c95817e8c3b76096a554ba66327f7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindwebpl/forwarder/zipball/328208ae35c95817e8c3b76096a554ba66327f7a",
+                "reference": "328208ae35c95817e8c3b76096a554ba66327f7a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mindweb\\Forwarder\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Czołnowski",
+                    "email": "marcin@czolnowski.net"
+                }
+            ],
+            "time": "2015-04-19 16:17:51"
+        },
+        {
+            "name": "mindweb/modifier",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindwebpl/modifier.git",
+                "reference": "1c2f21dcedb35b06222c5015a4860d39f55b3b07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindwebpl/modifier/zipball/1c2f21dcedb35b06222c5015a4860d39f55b3b07",
+                "reference": "1c2f21dcedb35b06222c5015a4860d39f55b3b07",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mindweb\\Modifier\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Czołnowski",
+                    "email": "marcin@czolnowski.net"
+                }
+            ],
+            "time": "2015-04-19 16:09:45"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v2.6.6",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console.git",
+                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/5b91dc4ed5eb08553f57f6df04c4730a73992667",
+                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/event-dispatcher": "~2.1",
+                "symfony/phpunit-bridge": "~2.7",
+                "symfony/process": "~2.1"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": "",
+                "symfony/process": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-03-30 15:54:10"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "mindweb/modifier": 20,
+        "mindweb/forwarder": 20,
+        "mindweb/collector": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

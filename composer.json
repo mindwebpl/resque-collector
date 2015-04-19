@@ -1,0 +1,23 @@
+{
+    "name": "mindweb/resque-collector",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcin Czołnowski",
+            "email": "marcin@czolnowski.net"
+        }
+    ],
+    "require": {
+        "mindweb/modifier": "dev-master",
+        "mindweb/forwarder": "dev-master",
+        "mindweb/collector": "dev-master",
+        "chrisboulton/php-resque": "1.2.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Mindweb\\ResqueCollector\\": "src"
+        }
+    }
+}
